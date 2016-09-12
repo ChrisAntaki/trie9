@@ -131,7 +131,7 @@ elements.input.addEventListener('keyup', e => {
     const input = e.target.value;
     if (input.length === 0) {
         lastInput = '';
-        elements.results.textContent = 'Please type a number to begin';
+        elements.results.textContent = 'Please type a number to see T9 suggestions. Suggestions are based on popular American names.';
         return;
     }
 
@@ -142,7 +142,7 @@ elements.input.addEventListener('keyup', e => {
     lastInput = input;
 
     predictions.search(input);
-});
+}, false);
 
 elements.results.addEventListener('click', e => {
     if (e.target.className.split(' ').indexOf('result') !== -1) {
@@ -153,9 +153,11 @@ elements.results.addEventListener('click', e => {
         const utterance = new SpeechSynthesisUtterance(e.target.textContent);
         speechSynthesis.speak(utterance);
     }
-    
+}, false);
+
+document.body.addEventListener('click', e => {
     elements.input.focus();
-});
+}, false);
 
 
 /*
