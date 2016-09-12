@@ -127,7 +127,10 @@ elements.results = document.querySelector('.results');
 
 let lastInput = '';
 
-elements.input.addEventListener('keyup', e => {
+elements.input.addEventListener('change', onInputChange, false);
+elements.input.addEventListener('keyup', onInputChange, false);
+
+function onInputChange(e) {
     const input = e.target.value;
     if (input.length === 0) {
         lastInput = '';
@@ -142,7 +145,7 @@ elements.input.addEventListener('keyup', e => {
     lastInput = input;
 
     predictions.search(input);
-}, false);
+}
 
 elements.results.addEventListener('click', e => {
     if (e.target.className.split(' ').indexOf('result') !== -1) {
