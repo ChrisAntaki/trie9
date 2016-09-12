@@ -1,0 +1,41 @@
+body {
+    font-size: 18px;
+    margin: 16px;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+img {
+    display: block;
+    margin: auto;
+    padding: 32px 0 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input {
+    max-width: 100%;
+    padding: 4px;
+    width: 100%;
+}
+
+.results {
+    background: #eee;
+    border: 1px solid #ccc;
+    margin: 16px 0;
+    min-height: 160px;
+    padding: 32px;
+}
+
+.results .result {
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.2s;
+}
+
+.results .result:hover {
+    background-color: #fff;
+    opacity: 0.8;
+}
