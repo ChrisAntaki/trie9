@@ -134,13 +134,14 @@ elements.input.addEventListener('keyup', e => {
         elements.results.textContent = 'Please type a number to begin';
         return;
     }
+
     if (input === lastInput) {
         return;
     }
+
     lastInput = input;
 
     predictions.search(input);
-
 });
 
 elements.results.addEventListener('click', e => {
@@ -152,6 +153,8 @@ elements.results.addEventListener('click', e => {
         const utterance = new SpeechSynthesisUtterance(e.target.textContent);
         speechSynthesis.speak(utterance);
     }
+    
+    elements.input.focus();
 });
 
 
